@@ -1,0 +1,116 @@
+Mantenimientos
+	(P)Servicios
+	(P)Tipos de pago
+	(P)Puestos
+	Empleado
+	(P)Razas
+	Clientes
+		Foto de la mascota
+	Propietarios
+	Usuario
+		
+	
+Transaccionales
+	Citas
+	Membresias	
+	
+
+Funcionalidades
+	Perfiles
+	Bitacora	
+	Configuraciones
+	Login
+	Reportes
+	Backup
+	Tablero de clientes (saldos)
+		Historial del cliente
+	Dashboard
+
+
+Estandarizacion
+	Campos deben llevar tabla al final
+	tbl afuera
+	pk -> id
+	bool -> tinyint : 1 true 0 false
+	Direccion(cambios) ->
+		+ Zona
+		# cuando se agregue al campo al final se le debe agregar _direccion
+		- quitar todo y agregar al propietario
+	Telefono(cambios) ->
+		- quitar todo y agregar al propietario
+	+ Tabla de tarifas
+		+ Campo: Condicional -> El parametro para definir el costo
+		+ Campo: Precio	-> El precio alv
+	+ Tabla control Membresia
+		+ Campo: Fecha
+		+ Relaciones alv***
+			+ Membresia
+			+ cita
+	+ Membresia
+		+ Fecha Vencimiento
+	+ Citas
+		- CitaPagada
+		+ Saldo
+	+ Servicios
+		+ Precio
+	+ CitaDetalle
+		- Cantidad
+		- Precio
+		+ Descuento
+		+ Subtotal
+	+ Propietario
+		+ NIT
+		+ Correo
+	+ Empleado
+		+ DPI
+	+ Usuario
+		- Id
+	+ Bitacora
+		- estatus	
+
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
