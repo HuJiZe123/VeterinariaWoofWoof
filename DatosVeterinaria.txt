@@ -25,45 +25,46 @@ Funcionalidades
 	Tablero de clientes (saldos)
 		Historial del cliente
 	Dashboard
+	Envio de recordatorios
 
 
 Estandarizacion
 	Campos deben llevar tabla al final
-	tbl afuera
-	pk -> id
-	bool -> tinyint : 1 true 0 false
-	Direccion(cambios) ->
+	**tbl afuera
+	**pk -> id
+	**bool -> tinyint : 1 true 0 false
+	**Direccion(cambios) ->
 		+ Zona
 		# cuando se agregue al campo al final se le debe agregar _direccion
 		- quitar todo y agregar al propietario
-	Telefono(cambios) ->
+	**Telefono(cambios) ->
 		- quitar todo y agregar al propietario
-	+ Tabla de tarifas
+	**+ Tabla de tarifas
 		+ Campo: Condicional -> El parametro para definir el costo
 		+ Campo: Precio	-> El precio alv
-	+ Tabla control Membresia
+	**+ Tabla control Membresia
 		+ Campo: Fecha
 		+ Relaciones alv***
 			+ Membresia
 			+ cita
-	+ Membresia
+	**+ Membresia
 		+ Fecha Vencimiento
-	+ Citas
+	**+ Citas
 		- CitaPagada
 		+ Saldo
-	+ Servicios
+	**+ Servicios
 		+ Precio
-	+ CitaDetalle
+	**+ CitaDetalle
 		- Cantidad
 		- Precio
 		+ Descuento
 		+ Subtotal
-	+ Propietario
+	**+ Propietario
 		+ NIT
 		+ Correo
-	+ Empleado
+	**+ Empleado
 		+ DPI
-	+ Usuario
+	//+ Usuario
 		- Id
 	+ Bitacora
 		- estatus	
