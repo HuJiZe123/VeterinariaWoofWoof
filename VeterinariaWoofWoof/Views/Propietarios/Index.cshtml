@@ -1,0 +1,63 @@
+﻿@model IEnumerable<VeterinariaWoofWoof.Models.Propietario>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre_propietario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Apellido_propietario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Correo_propietario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion_direccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Zona_direccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Numero_telefono)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre_propietario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Apellido_propietario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Correo_propietario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion_direccion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Zona_direccion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Numero_telefono)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

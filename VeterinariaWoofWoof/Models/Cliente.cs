@@ -11,7 +11,9 @@ namespace VeterinariaWoofWoof.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using System.Web;
+
     public partial class Cliente
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -26,6 +28,7 @@ namespace VeterinariaWoofWoof.Models
         public Nullable<int> Codraza { get; set; }
         public Nullable<int> Codpropietario { get; set; }
         public Nullable<byte> estatus { get; set; }
+        public string ImgPath_cliente { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CitaCliente> CitaClientes { get; set; }
@@ -33,5 +36,7 @@ namespace VeterinariaWoofWoof.Models
         public virtual ICollection<MembresiaCliente> MembresiaClientes { get; set; }
         public virtual Propietario Propietario { get; set; }
         public virtual Raza Raza { get; set; }
+
+        public HttpPostedFileBase File { get; set; }
     }
 }

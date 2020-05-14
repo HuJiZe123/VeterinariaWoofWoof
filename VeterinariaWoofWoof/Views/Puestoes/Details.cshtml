@@ -1,0 +1,25 @@
+﻿@model VeterinariaWoofWoof.Models.Puesto
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Puesto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre_puesto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre_puesto)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="BD_WoofWoofModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="BD_WoofWoofModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Bitacora">
           <Key>
             <PropertyRef Name="id" />
@@ -58,6 +58,7 @@
           <Property Name="Codraza" Type="int" />
           <Property Name="Codpropietario" Type="int" />
           <Property Name="estatus" Type="tinyint" />
+          <Property Name="ImgPath_cliente" Type="varchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="ControlMembresia">
           <Key>
@@ -556,8 +557,7 @@
             <End Role="Bitacora" EntitySet="Bitacora" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BD_WoofWoofModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -630,6 +630,7 @@
           <NavigationProperty Name="MembresiaClientes" Relationship="Self.FK_Codcliente_memcli" FromRole="Cliente" ToRole="MembresiaCliente" />
           <NavigationProperty Name="Propietario" Relationship="Self.FK_Codpropietario_cliente" FromRole="Cliente" ToRole="Propietario" />
           <NavigationProperty Name="Raza" Relationship="Self.FK_Codraza_cliente" FromRole="Cliente" ToRole="Raza" />
+          <Property Name="ImgPath_cliente" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="ControlMembresia">
           <Key>
@@ -1211,6 +1212,7 @@
           <EntitySetMapping Name="Clientes">
             <EntityTypeMapping TypeName="BD_WoofWoofModel.Cliente">
               <MappingFragment StoreEntitySet="Cliente">
+                <ScalarProperty Name="ImgPath_cliente" ColumnName="ImgPath_cliente" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="Nombre_cliente" ColumnName="Nombre_cliente" />
                 <ScalarProperty Name="Codraza" ColumnName="Codraza" />

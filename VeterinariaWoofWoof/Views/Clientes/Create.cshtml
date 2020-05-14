@@ -1,0 +1,103 @@
+﻿@model VeterinariaWoofWoof.Models.Cliente
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>Cliente</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.Nombre_cliente, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Nombre_cliente, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Nombre_cliente, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Codraza, "Codraza", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("Codraza", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Codraza, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Codpropietario, "Codpropietario", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("Codpropietario", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Codpropietario, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.File, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="file" id="upload" />
+            @Html.EditorFor(model => model.ImgPath_cliente, new { htmlAttributes = new { @class = "form-control", @id = "filename" } })
+            @Html.ValidationMessageFor(model => model.ImgPath_cliente, "", new { @class = "text-danger" })
+            <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+            <script>
+                $('#upload').change(function () {
+                    var filename = $(this).val();
+                    var lastIndex = filename.lastIndexOf("\\");
+                    if (lastIndex >= 0) {
+                        filename = filename.substring(lastIndex + 1);
+                    }
+                    $('#filename').val(filename);
+                })
+
+                function SaveImages() {
+                    var formData = new FormData();
+                    var totalFiles = document.getElementById("upload").files.length;
+
+                    var file = document.getElementById("upload").files[0];
+                    formData.append("FileUpload", file);
+                    alert(totalFiles);
+                    alert(file);
+                    $.ajax({
+                        type: "POST",
+                        url: '/Clientes/SaveImages',
+                        data: formData,
+                        dataType: "json",
+                        contentType: false,
+                        success: function (r) {
+                            alert(r);
+                        },
+                    });
+                };
+
+                $(document).ready(function () {
+                    $('#upload').change(SaveImages);
+                })
+
+            </script>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

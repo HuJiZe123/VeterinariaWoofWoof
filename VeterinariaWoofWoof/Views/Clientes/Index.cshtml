@@ -1,0 +1,51 @@
+﻿@model IEnumerable<VeterinariaWoofWoof.Models.Cliente>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre_cliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Propietario.Nombre_propietario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Raza.Nombre_raza)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImgPath_cliente)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre_cliente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Propietario.Nombre_propietario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Raza.Nombre_raza)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ImgPath_cliente)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.id })
+        </td>
+    </tr>
+}
+
+</table>

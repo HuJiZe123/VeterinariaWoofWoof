@@ -2556,6 +2556,12 @@ fieldset:disabled a.btn {
   pointer-events: none;
 }
 
+.btn-jazzou {
+    color: #fff;
+    background-color: #155724;
+    border-color: #155724;
+}
+
 .btn-primary {
   color: #fff;
   background-color: #007bff;

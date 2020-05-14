@@ -1,0 +1,58 @@
+﻿@model VeterinariaWoofWoof.Models.Usuario
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Usuario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nick_usuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nick_usuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pass_usuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pass_usuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Empleado.Nombre_empleado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empleado.Nombre_empleado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Perfil.Nombre_perfil)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Perfil.Nombre_perfil)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

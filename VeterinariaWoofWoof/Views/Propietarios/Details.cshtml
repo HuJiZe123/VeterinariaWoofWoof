@@ -1,0 +1,66 @@
+﻿@model VeterinariaWoofWoof.Models.Propietario
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Propietario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre_propietario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre_propietario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Apellido_propietario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Apellido_propietario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Correo_propietario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Correo_propietario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripcion_direccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion_direccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Zona_direccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Zona_direccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Numero_telefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Numero_telefono)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -23,6 +23,7 @@ create table Cliente(
     Nombre_cliente varchar(40),
     Codraza int,
     Codpropietario int,
+	ImagePath_cliente varchar(255),
     estatus tinyint,
     PRIMARY KEY (id),
     CONSTRAINT FK_Codraza_cliente
